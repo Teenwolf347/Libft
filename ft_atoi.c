@@ -6,17 +6,17 @@
 /*   By: tturnber <tturnber@MSK.21-SCHOOL.RU>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/03 13:25:54 by tturnber          #+#    #+#             */
-/*   Updated: 2020/05/03 13:35:01 by student          ###   ########.fr       */
+/*   Updated: 2020/05/13 15:02:06 by student          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(const char *str)
+int					ft_atoi(const char *str)
 {
-	int i;
-	int negativ;
-	int number;
+	int				i;
+	int				negativ;
+	unsigned long	number;
 
 	i = 0;
 	number = 0;
@@ -32,8 +32,11 @@ int	ft_atoi(const char *str)
 	}
 	while (str[i] >= '0' && str[i] <= '9')
 	{
-		number = (number * 10) + (str[i] - '0');
-		i++;
+		number = ((long)(number * 10) + (str[i++] - '0'));
+		if (number > 9223372036854775807 && negativ == 1)
+			return (-1);
+		if (number > 9223372036854775807 && negativ == -1)
+			return (0);
 	}
 	return (number * negativ);
 }

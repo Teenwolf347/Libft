@@ -6,7 +6,7 @@
 /*   By: tturnber <tturnber@MSK.21-SCHOOL.RU>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/04 18:53:19 by tturnber          #+#    #+#             */
-/*   Updated: 2020/05/04 19:11:06 by student          ###   ########.fr       */
+/*   Updated: 2020/05/13 14:21:30 by student          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ char		*ft_substr(const char *s, unsigned int start, size_t len)
 	size_t	i;
 	char	*dst;
 
-	if (*s == '\0')
+	if (!s)
 		return (NULL);
 	dst = malloc(sizeof(char) * (len + 1));
 	if (dst == NULL)

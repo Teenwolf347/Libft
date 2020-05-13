@@ -16,13 +16,11 @@ void			*ft_memccpy(void *dst, const void *str, int v, size_t s)
 {
 	size_t		i;
 
-	if (dst == str || s == 0)
-		return (dst);
 	i = 0;
 	while (i < s)
 	{
-		(((char *)dst)[i]) = (((const char *)str)[i]);
-		if ((((char *)dst)[i]) == (unsigned char)v)
+		(((unsigned char *)dst)[i]) = (((unsigned char *)str)[i]);
+		if ((((unsigned char *)dst)[i]) == (unsigned char)v)
 			return (dst + i + 1);
 		i++;
 	}

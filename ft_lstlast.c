@@ -6,7 +6,7 @@
 /*   By: tturnber <tturnber@MSK.21-SCHOOL.RU>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/09 17:10:24 by tturnber          #+#    #+#             */
-/*   Updated: 2020/05/09 17:12:14 by student          ###   ########.fr       */
+/*   Updated: 2020/05/13 14:29:35 by student          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,12 @@
 
 t_list	*ft_lstlast(t_list *lst)
 {
-	while (lst->next != NULL)
+	if (lst != NULL)
 	{
-		lst = lst->next;
+		while (lst->next != NULL)
+		{
+			lst = lst->next;
+		}
 	}
 	return (lst);
 }
