@@ -6,15 +6,15 @@
 /*   By: tturnber <tturnber@MSK.21-SCHOOL.RU>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/08 14:44:09 by tturnber          #+#    #+#             */
-/*   Updated: 2020/05/08 15:14:11 by student          ###   ########.fr       */
+/*   Updated: 2020/05/15 20:27:34 by student          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t		ft_set(char c, char const *set)
+static size_t	ft_set(char c, char const *set)
 {
-	size_t	i;
+	size_t		i;
 
 	i = 0;
 	while (set[i] != '\0')
@@ -26,12 +26,12 @@ size_t		ft_set(char c, char const *set)
 	return (0);
 }
 
-char		*ft_strtrim(char const *s1, char const *set)
+char			*ft_strtrim(char const *s1, char const *set)
 {
-	size_t	i;
-	size_t	j;
-	size_t	z;
-	char	*dst;
+	size_t		i;
+	size_t		j;
+	size_t		z;
+	char		*dst;
 
 	i = 0;
 	if (!(s1))
