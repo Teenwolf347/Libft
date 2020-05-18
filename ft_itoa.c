@@ -6,15 +6,15 @@
 /*   By: tturnber <tturnber@MSK.21-SCHOOL.RU>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/07 17:18:48 by tturnber          #+#    #+#             */
-/*   Updated: 2020/05/07 17:42:01 by student          ###   ########.fr       */
+/*   Updated: 2020/05/18 21:46:48 by student          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_length(int n)
+static size_t	ft_length(int n)
 {
-	size_t	length;
+	size_t		length;
 
 	length = 0;
 	if (n < 0)
@@ -28,7 +28,7 @@ size_t	ft_length(int n)
 	return (length);
 }
 
-char	*ft_itoa(int n)
+char			*ft_itoa(int n)
 {
 	long		nb;
 	size_t		length;
