@@ -6,7 +6,7 @@
 /*   By: tturnber <tturnber@MSK.21-SCHOOL.RU>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/01 13:07:35 by tturnber          #+#    #+#             */
-/*   Updated: 2020/05/01 13:27:32 by student          ###   ########.fr       */
+/*   Updated: 2020/05/19 17:04:30 by student          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,22 +14,17 @@
 
 char	*ft_strnstr(const char *s1, const char *s2, size_t s)
 {
-	size_t i;
-	size_t j;
 	size_t len;
 
 	len = ft_strlen(s2);
-	i = 0;
-	if (s2[i] == '\0')
+	if (s2[0] == '\0')
 		return ((char *)s1);
-	while (s1[i] != '\0' && i < s)
+	while (*s1 != '\0' && len < s)
 	{
-		j = 0;
-		while (s1[i + j] == s2[j] && s2[j] != '\0' && (i + j) < s)
-			j++;
-		if (j == len)
-			return ((char *)&s1[i]);
-		i++;
+		s--;
+		if (*s1 == *s2 && !ft_strncmp(s1, s2, len))
+			return ((char *)s1);
+		s1++;
 	}
 	return (NULL);
 }
