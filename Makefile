@@ -1,6 +1,3 @@
-
-NAME	= libft.a
-
 SRCS	= ft_atoi.c \
 		ft_bzero.c \
 		ft_calloc.c \
@@ -35,7 +32,8 @@ SRCS	= ft_atoi.c \
 		ft_itoa.c \
 		ft_strtrim.c \
 		ft_split.c \
-		ft_lstnew.c \
+
+BONUS_SRCS = 	ft_lstnew.c \
 		ft_lstadd_front.c \
 		ft_lstsize.c \
 		ft_lstlast.c \
@@ -43,22 +41,30 @@ SRCS	= ft_atoi.c \
 		ft_lstdelone.c \
 		ft_lstclear.c \
 		ft_lstiter.c \
-		ft_lstmap.c
-
+		ft_lstmap.c \
 
 OBJS	= ${SRCS:.c=.o}
 
-all:		${NAME}
+BONUS_OBJS = ${BONUS_SRCS:.c=.o}
+
+NAME	= libft.a
 
 $(NAME):	${OBJS}
-			gcc -c -Wall -Wextra -Werror ${SRCS}
+			gcc -Wall -Wextra -Werror -c ${SRCS}
 			ar rc ${NAME} ${OBJS} libft.h
-			ranlib ${NAME}
+
+all:		${NAME} bonus
 
 clean:
-			rm -f ${OBJS}
+			rm -f ${OBJS} ${BONUS_OBJS}
 
 fclean:		clean
 			rm -f ${NAME}
 
 re:		fclean all
+
+bonus:		${BONUS_OBJS}
+			gcc -Wall -Wextra -Werror -c ${BONUS_SRCS}
+			ar rc ${NAME} ${BONUS_OBJS}  libft.h
+
+.PHONY:		all clean fclean re
