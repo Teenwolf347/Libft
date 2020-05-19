@@ -6,7 +6,7 @@
 /*   By: tturnber <tturnber@MSK.21-SCHOOL.RU>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/04 17:49:06 by tturnber          #+#    #+#             */
-/*   Updated: 2020/05/04 17:51:01 by student          ###   ########.fr       */
+/*   Updated: 2020/05/19 22:00:23 by student          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,7 @@
 
 void	ft_putstr_fd(char *s, int fd)
 {
-	if (s != '\0')
-	{
-		write(fd, s, ft_strlen(s));
-	}
+	if (!s)
+		return ;
+	write(fd, s, ft_strlen(s));
 }
