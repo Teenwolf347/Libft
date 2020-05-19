@@ -52,6 +52,7 @@ NAME	= libft.a
 $(NAME):	${OBJS}
 			gcc -Wall -Wextra -Werror -c ${SRCS}
 			ar rc ${NAME} ${OBJS} libft.h
+			ranlib ${NAME}
 
 all:		${NAME} bonus
 
@@ -66,5 +67,6 @@ re:		fclean all
 bonus:		${BONUS_OBJS}
 			gcc -Wall -Wextra -Werror -c ${BONUS_SRCS}
 			ar rc ${NAME} ${BONUS_OBJS}  libft.h
+			ranlib ${NAME}
 
 .PHONY:		all clean fclean re
