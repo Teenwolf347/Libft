@@ -6,7 +6,7 @@
 /*   By: tturnber <tturnber@MSK.21-SCHOOL.RU>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/08 17:20:32 by tturnber          #+#    #+#             */
-/*   Updated: 2020/05/08 17:59:42 by student          ###   ########.fr       */
+/*   Updated: 2020/05/20 16:06:14 by student          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,19 @@ static int	ft_count_words(const char *s, char c)
 	return (count_words);
 }
 
+static void	ft_splitfree(char **words)
+{
+	size_t	i;
+
+	i = 0;
+	while (words[i])
+	{
+		free(words[i]);
+		i++;
+	}
+	free(words);
+}
+
 static int	ft_word_l(const char *s, char c)
 {
 	size_t	i;
@@ -57,19 +70,20 @@ char		**ft_split(char const *s, char c)
 	if (s == '\0')
 		return (NULL);
 	count_words = ft_count_words((const char *)s, c);
-	words = (char **)malloc(sizeof(char *) * (count_words + 1));
-	if (words == NULL)
+	if (!(words = (char **)malloc(sizeof(char *) * (count_words + 1))))
 		return (NULL);
 	i = 0;
 	while (count_words != 0)
 	{
 		while (*s == c && *s != '\0')
 			s++;
-		words[i] = ft_substr((const char *)s, 0, ft_word_l((const char *)s, c));
-		if (words[i] == NULL)
+		if (!(words[i++] = ft_substr((const char *)s, 0,
+						ft_word_l((const char *)s, c))))
+		{
+			ft_splitfree(words);
 			return (NULL);
+		}
 		s += ft_word_l(s, c);
-		i++;
 		count_words--;
 	}
 	words[i] = NULL;
