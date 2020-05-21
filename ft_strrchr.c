@@ -6,23 +6,23 @@
 /*   By: tturnber <tturnber@MSK.21-SCHOOL.RU>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/30 18:21:19 by tturnber          #+#    #+#             */
-/*   Updated: 2020/04/30 18:34:46 by student          ###   ########.fr       */
+/*   Updated: 2020/05/21 16:58:50 by student          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strrchr(const char *str, int val)
+char	*ft_strrchr(const char *s, int c)
 {
 	size_t size;
 
 	size = 0;
-	while (str[size] != '\0')
+	while (s[size] != '\0')
 		size++;
 	while (size + 1 > 0)
 	{
-		if (str[size] == (char)val)
-			return ((char *)str + size);
+		if (s[size] == (char)c)
+			return ((char *)s + size);
 		size--;
 	}
 	return (NULL);

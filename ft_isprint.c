@@ -6,15 +6,15 @@
 /*   By: tturnber <tturnber@MSK.21-SCHOOL.RU>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/01 15:23:53 by tturnber          #+#    #+#             */
-/*   Updated: 2020/05/01 15:27:30 by student          ###   ########.fr       */
+/*   Updated: 2020/05/21 17:14:05 by student          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isprint(int symbol)
+int	ft_isprint(int c)
 {
-	if (symbol >= 32 && symbol <= 126)
+	if (c >= 32 && c <= 126)
 		return (1);
 	else
 		return (0);

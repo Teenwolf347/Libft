@@ -6,15 +6,15 @@
 /*   By: tturnber <tturnber@MSK.21-SCHOOL.RU>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/01 15:12:25 by tturnber          #+#    #+#             */
-/*   Updated: 2020/05/01 15:14:33 by student          ###   ########.fr       */
+/*   Updated: 2020/05/21 17:13:10 by student          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isascii(int symbol)
+int	ft_isascii(int c)
 {
-	if (symbol >= 0 && symbol <= 127)
+	if (c >= 0 && c <= 127)
 		return (1);
 	else
 		return (0);

@@ -6,15 +6,15 @@
 /*   By: tturnber <tturnber@MSK.21-SCHOOL.RU>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/01 14:45:59 by tturnber          #+#    #+#             */
-/*   Updated: 2020/05/06 13:13:21 by student          ###   ########.fr       */
+/*   Updated: 2020/05/21 17:10:45 by student          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isdigit(int symbol)
+int	ft_isdigit(int c)
 {
-	if (symbol >= '0' && symbol <= '9')
+	if (c >= '0' && c <= '9')
 		return (1);
 	else
 		return (0);
