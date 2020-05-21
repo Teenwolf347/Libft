@@ -49,8 +49,12 @@ BONUS_OBJS = ${BONUS_SRCS:.c=.o}
 
 NAME	= libft.a
 
+CFLAGS	= -Wall -Wextra -Werror
+
+COMPILE	= gcc
+
 $(NAME):	${OBJS}
-			gcc -Wall -Wextra -Werror -c ${SRCS}
+			${COMPILE} ${CFLAGS} -c ${SRCS}
 			ar rc ${NAME} ${OBJS} libft.h
 			ranlib ${NAME}
 
@@ -65,7 +69,7 @@ fclean:		clean
 re:		fclean all
 
 bonus:		${BONUS_OBJS}
-			gcc -Wall -Wextra -Werror -c ${BONUS_SRCS}
+			${COMPILE} ${CFLAGS} -c ${BONUS_SRCS}
 			ar rc ${NAME} ${BONUS_OBJS}  libft.h
 			ranlib ${NAME}
 
