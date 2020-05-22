@@ -6,7 +6,7 @@
 /*   By: tturnber <tturnber@MSK.21-SCHOOL.RU>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/03 15:01:51 by tturnber          #+#    #+#             */
-/*   Updated: 2020/05/21 16:55:15 by student          ###   ########.fr       */
+/*   Updated: 2020/05/22 23:06:15 by student          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ size_t		ft_strlcpy(char *dst, const char *src, size_t size)
 	size_t	n;
 	size_t	length;
 
-	if (dst == '\0' || src == '\0')
+	if (!dst || !src)
 		return (0);
 	n = ft_strlen(src);
 	if (size != 0)

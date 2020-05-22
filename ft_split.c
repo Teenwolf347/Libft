@@ -6,7 +6,7 @@
 /*   By: tturnber <tturnber@MSK.21-SCHOOL.RU>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/08 17:20:32 by tturnber          #+#    #+#             */
-/*   Updated: 2020/05/20 16:06:14 by student          ###   ########.fr       */
+/*   Updated: 2020/05/22 23:08:48 by student          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ char		**ft_split(char const *s, char c)
 	size_t	i;
 	char	**words;
 
-	if (s == '\0')
+	if (!s)
 		return (NULL);
 	count_words = ft_count_words((const char *)s, c);
 	if (!(words = (char **)malloc(sizeof(char *) * (count_words + 1))))

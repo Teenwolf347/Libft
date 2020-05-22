@@ -6,7 +6,7 @@
 /*   By: tturnber <tturnber@MSK.21-SCHOOL.RU>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/04 18:36:18 by tturnber          #+#    #+#             */
-/*   Updated: 2020/05/04 18:44:20 by student          ###   ########.fr       */
+/*   Updated: 2020/05/22 23:08:18 by student          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char		*ft_strmapi(const char *s, char (*f)(unsigned int, char))
 	size_t	length;
 	char	*dst;
 
-	if (s == '\0' || !f)
+	if (!s || !f)
 		return (NULL);
 	length = ft_strlen(s);
 	dst = malloc(sizeof(char) * (length + 1));

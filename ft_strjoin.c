@@ -6,7 +6,7 @@
 /*   By: tturnber <tturnber@MSK.21-SCHOOL.RU>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/04 19:14:35 by tturnber          #+#    #+#             */
-/*   Updated: 2020/05/04 19:23:44 by student          ###   ########.fr       */
+/*   Updated: 2020/05/22 23:07:54 by student          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char		*ft_strjoin(const char *s1, const char *s2)
 	size_t	z;
 	char	*dst;
 
-	if (s1 == '\0' || s2 == '\0')
+	if (!s1 || !s2)
 		return (NULL);
 	i = 0;
 	while (s1[i] != '\0')
